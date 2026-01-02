@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Untukmu, yang Selalu Istimewa 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(circle at top,#2a1b3d,#090514 70%);
+  color:#f5edff;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+/* INTRO */
+#intro{
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle at top,#3a2158,#0b0618 70%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  z-index:9999;
+  transition:1s;
+}
+.gift{
+  font-size:90px;
+  cursor:pointer;
+  animation:bounce 2s infinite;
+}
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-18px)}
+}
+.intro-name{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;
+  margin-top:18px;
+}
+.tap-text{margin-top:18px;opacity:.85}
+
+/* VIDEO */
+#videoWrap{
+  position:absolute;
+  inset:0;
+  background:#000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+#videoWrap video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* MAIN */
+#main{
+  opacity:0;
+  pointer-events:none;
+  transition:1.2s;
+}
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:2.4rem;
+  margin-top:75px;
+}
+.subtitle{opacity:.9;margin-top:12px}
+
+.card{
+  width:92%;
+  max-width:720px;
+  margin:55px auto;
+  padding:30px;
+  background:rgba(255,255,255,.07);
+  border-radius:26px;
+  backdrop-filter:blur(24px);
+}
+
+.photo{
+  width:100%;
+  max-height:340px;
+  object-fit:cover;
+  border-radius:22px;
+}
+
+.message{margin-top:30px;line-height:1.9}
+
+.gallery{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+.gallery img{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  border-radius:18px;
+  cursor:pointer;
+  transition:.3s;
+}
+.gallery img:hover{transform:scale(1.03)}
+
+.btn{
+  margin-top:45px;
+  padding:18px 40px;
+  border:none;
+  border-radius:50px;
+  cursor:pointer;
+  color:white;
+  background:linear-gradient(135deg,#ff8fdc,#c09cff,#7aa7ff);
+}
+
+/* POPUP */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(6,4,12,.88);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:.4s;
+}
+.popup.active{opacity:1;pointer-events:auto;}
+.popup-box{
+  background:#24163a;
+  padding:30px;
+  border-radius:22px;
+}
+
+/* MUSIC */
+.music{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:rgba(255,255,255,.18);
+  padding:12px 18px;
+  border-radius:50px;
+  cursor:pointer;
+}
+
+/* PHOTO VIEWER */
+.viewer{
+  position:fixed;
+  inset:0;
+  background:rgba(5,3,15,.9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:.4s;
+  z-index:999;
+}
+.viewer.active{
+  opacity:1;
+  pointer-events:auto;
+}
+.viewer img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:22px;
+}
+.viewer span{
+  position:absolute;
+  top:20px;
+  right:25px;
+  font-size:32px;
+  cursor:pointer;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+  <div class="gift" onclick="openGift()">🎁</div>
+  <div class="intro-name">Haii Evaaa Ismaful Hawa Ada Rahasia Di balik kado ini</div>
+  <div class="tap-text">Yokk Sentuh kadonya 🤍</div>
+
+  <div id="videoWrap">
+    <video id="introVideo" src="vidio.mp4" autoplay muted playsinline></video>
+  </div>
+</div>
+
+<audio id="song" loop>
+  <source src="lagu.mpeg" type="audio/mpeg">
+</audio>
+
+<!-- MAIN -->
+<div id="main">
+  <h1>Selamat Ulang Tahun 🤍</h1>
+  <p class="subtitle">"Barakallah fi umrik, Evaaa Ismaful Hawa"</p>
+
+  <div class="card">
+    <img src="epay6.jpeg" class="photo">
+
+    <p class="message">
+    "15-Januari-2009/15-Januari-2026"<br>
+  Di hari lahirmu ini, aku berdoa dalam diam,<br>
+  bukan doa yang lantang, tapi doa yang lahir dari hati yang tulus.<br><br>
+
+  Semoga Allah selalu memeluk hatimu,<br>
+  terutama di hari-hari ketika kamu terlihat kuat,
+  padahal di dalamnya kamu sedang berjuang sendirian. 🤍<br><br>
+
+  Aku tahu, tidak semua lelahmu pernah kamu ceritakan.
+  Tidak semua air mata memilih jatuh dengan suara.
+  Ada doa-doa yang kamu panjatkan sendirian di malam hari,
+  dan ada sabar yang kamu simpan tanpa pernah mengeluh.<br><br>
+
+  Barakallah fi umrik Eva Ismaful Hawa🤍.
+  Semoga Allah mengganti setiap luka dengan ketenangan,
+  setiap kehilangan dengan keikhlasan,
+  dan setiap kecewa dengan harapan yang jauh lebih indah dari yang pernah kamu bayangkan. 🌙✨<br><br>
+
+  Semoga langkahmu selalu dijaga,
+  hatimu selalu dilembutkan,
+  dan hidupmu dipenuhi orang-orang yang mencintaimu
+  tanpa perlu kamu memohon atau berpura-pura kuat.<br><br>
+
+  Terima kasih…
+  karena sampai hari ini, kamu masih memilih bertahan sejauh ini.
+  Dan semoga setelah ini, hidupmu lebih banyak memberi alasan untuk tersenyum,
+  bukan hanya untuk bertahan.
+</p>
+  
+ <div class="gallery">
+      <img src="epay1.jpeg" onclick="openImage(this.src)">
+      <img src="epay2.jpeg" onclick="openImage(this.src)">
+      <img src="epay3.jpeg" onclick="openImage(this.src)">
+      <img src="epay5.jpeg" onclick="openImage(this.src)">
+    </div>
+
+  <p class="message">
+Walaupun hanya sebuah website.dan mungkin terlalu sederhana bagi kamu.
+tapi...website ini mengandung arti yang sangat mendalam,
+walaupun aku tidak bisa 
+Tidak bisa memelukmu,
+tidak bisa menggenggam tanganmu,
+tidak bisa menatap matamu saat mengucapkannya.<br><br>
+
+Tapi di setiap huruf yang kamu baca,
+ada doa yang diam-diam kupanjatkan.
+Ada rasa yang kutitipkan dengan hati paling jujur.<br><br>
+
+Terima kasih…
+karena sudah bertahan sejauh ini.
+Karena tetap menjadi kamu,
+meski dunia sering kali tidak ramah.<br><br>
+
+Semoga di usia barumu,
+Allah menjaga langkahmu,
+menenangkan hatimu,
+menguatkan pundakmu saat lelah,
+dan menghadirkan bahagia yang selama ini kamu pendam.<br><br>
+
+Jika suatu hari kamu merasa sendiri,
+ingatlah…
+di suatu sudut internet,
+pernah ada seseorang
+yang membuatkan seluruh ini
+hanya karena kamu begitu berarti.<br><br>
+
+sekali lagi Barakallahu fi umrik 🤍
+Semoga hidupmu selalu dikelilingi cinta,
+dan semoga kamu selalu tahu…
+kamu pantas dicintai, sepenuh itu.
+</p>
+
+  <button class="btn" onclick="openPopup()">💌 Pesan Spesial Untukmu</button>
+  </div>
+</div>
+
+<!-- VIEWER FOTO -->
+<div id="viewer" class="viewer">
+  <span onclick="closeImage()">✕</span>
+  <img id="viewerImg">
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+  <div class="popup-box">
+    <h2>Untukmu 🤍</h2>
+    <p>
+      Jika suatu hari kamu merasa lelah menjadi kuat,<br>
+      ingat… kamu tidak sendirian.<br>
+      Kamu dicintai lebih dari yang kamu sadari.
+      Dan dunia ini lebih indah karena kamu ada.<br><br>
+      I Always With You Epayy
+    </p>
+    <button onclick="closePopup()">Tutup</button>
+  </div>
+
+</div>
+
+<div class="music" onclick="toggleMusic()">🎵</div>
+
+<script>
+const intro=document.getElementById('intro');
+const main=document.getElementById('main');
+const popup=document.getElementById('popup');
+const video=document.getElementById('introVideo');
+const song=document.getElementById('song');
+
+/* INTRO */
+function openGift(){
+  document.querySelector('.gift').style.display='none';
+  document.querySelector('.tap-text').style.display='none';
+  document.querySelector('.intro-name').style.display='none';
+  document.getElementById('videoWrap').style.display='flex';
+  video.play();
+  song.volume=0.6;
+  song.play();
+}
+
+video.addEventListener('ended',()=>{
+  intro.style.opacity=0;
+  setTimeout(()=>{
+    intro.style.display='none';
+    main.style.opacity=1;
+    main.style.pointerEvents='auto';
+  },1000);
+});
+
+/* POPUP */
+function openPopup(){popup.classList.add('active')}
+function closePopup(){popup.classList.remove('active')}
+
+/* MUSIC */
+let playing=true;
+function toggleMusic(){
+  playing?(song.pause(),playing=false):(song.play(),playing=true);
+}
+
+/* IMAGE VIEWER */
+const viewer=document.getElementById('viewer');
+const viewerImg=document.getElementById('viewerImg');
+function openImage(src){
+  viewerImg.src=src;
+  viewer.classList.add('active');
+}
+function closeImage(){
+  viewer.classList.remove('active');
+}
+</script>
+
+</body>
+</html>
